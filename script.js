@@ -1,11 +1,45 @@
 var LOWER, RESULT, LENGTH, REGEX;
+var QUANTITY=1;
+var say=document.querySelector('#say');
+var read=document.querySelector('#read');
+var all=document.querySelector('#all');
+var abc = document.querySelector('#abc');
+var ABC = document.querySelector('#ABC');
+var NUM = document.querySelector('#NUM');
+var SYM = document.querySelector('#SYM');
+
+const handleRCS = () => {
+NUM.disabled=false;
+SYM.disabled=false;
+if (all.checked){
+    abc.checked=true;
+    ABC.checked=true;
+    NUM.checked=true;
+    SYM.checked=true;
+}
+if (say.checked){
+    abc.checked=true;
+    ABC.checked=true;
+    NUM.disabled=true;
+    SYM.disabled=true;
+}
+if (read.checked){
+    abc.checked=true;
+    ABC.checked=true;
+    NUM.checked=false;
+    SYM.checked=false;
+}
+}
+
 
 $('[data-toggle="tooltip"]').tooltip();
+$('[data2-toggle="tooltip"]').tooltip();
+
 
 var weak = []
 for (i = 6; i < 16; i++) { weak.push(i) }
 weak.map(i => {
-    var r = document.createElement('option');
+    const r = document.createElement('option');
     r.setAttribute('value', i)
     r.appendChild(document.createTextNode(i))
     document.querySelector('#weak').appendChild(r)
@@ -14,31 +48,30 @@ weak.map(i => {
 var strong = []
 for (i = 16; i < 101; i++) { strong.push(i) }
 strong.map(i => {
-    var r = document.createElement('option');
+    const r = document.createElement('option');
     r.setAttribute('value', i)
     r.appendChild(document.createTextNode(i))
     document.querySelector('#strong').appendChild(r)
 })
 
-document.querySelector('#generate').disabled = true
+var quantity = []
+for (i=1;i<=20;i++){quantity.push(i)}
+quantity.map(i => {
+    const r=document.createElement('option');
+    r.setAttribute('value',i)
+    r.appendChild(document.createTextNode(i))
+    document.querySelector('#quantity').appendChild(r) 
+})
 
-const handleChange = () => {
+document.querySelector('#select').value=12
+
+const Result = () => {
     $('[data-toggle="tooltip"]').tooltip('hide').attr('data-original-title', 'CLICK TO COPY');
-    document.querySelector('.form-control').value = ''
-    document.querySelector('#generate').disabled = false
     LENGTH = document.querySelector('#select').value;
-}
-
-const handleGenerate = () => {
-    $('[data-toggle="tooltip"]').tooltip('hide').attr('data-original-title', 'CLICK TO COPY');
     LOWER = 'abcdefghijklmnopqrstuvwxyz';
     UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     NUMBER = '0123456789';
-    SYMBOL = '@#$%&_*';
-    var abc = document.querySelector('#abc');
-    var ABC = document.querySelector('#ABC');
-    var NUM = document.querySelector('#NUM');
-    var SYM = document.querySelector('#SYM');
+    SYMBOL = '@#$%&_*){:';
     REGEX = '';
     if (abc.checked) { REGEX += LOWER }
     if (ABC.checked) { REGEX += UPPER }
@@ -48,13 +81,31 @@ const handleGenerate = () => {
     for (let i = 0; i < LENGTH; i++) {
         RESULT += REGEX[Math.floor(Math.random() * REGEX.length)]
     }
-    document.querySelector('.form-control').value = RESULT;
+    var VALUE=document.querySelector('.form-control');
+    if (VALUE.value!==undefined){return VALUE.value = RESULT}
 }
 
-const handleHover = () => {
-    if (document.querySelector('.form-control').value === '') {
-        $('[data-toggle="tooltip"]').tooltip('hide');
-    }
+Result()
+
+const handleQuantity = () => {QUANTITY=document.querySelector('#quantity').value;}
+
+const handleGenerate = () => {
+    var GEN = []
+    for (i = 0; i < QUANTITY; i++) { GEN.push(Result()) }
+    document.querySelector('textarea').value = GEN.toString().replace(/,/g, '\n')
+}
+
+const handleChange = () => {
+    LENGTH = document.querySelector('#select').value;
+    document.querySelector('#range').value=LENGTH;
+    $('[data-toggle="tooltip"]').tooltip('hide').attr('data-original-title', 'CLICK TO COPY');
+    handleGenerate()
+}
+
+const handleRange = () =>{
+    const RANGE=document.querySelector('#range').value;
+    document.querySelector('#select').value=RANGE;
+    handleGenerate()
 }
 
 const handleCopy = () => {

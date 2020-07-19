@@ -1,19 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+:root{--main-color:crimson}
 
 *{margin:0;padding:0;box-sizing: border-box;user-select: none;}
 
-body{background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(0, 159, 251) 100%);min-height:100vh;display: flex;justify-content: center;align-items: center;}
+body{background: #F9FBFD;}
 
-h1{font-family: 'Quicksand', sans-serif;font-size: 60px;}
+.container{background:#fff;border-radius: 20px;margin-top:100px;width:900px;min-height:calc(100vh - 300px );position: relative;}
 
-h1>img{width:60px;animation: spin 10s linear infinite;}
+.heading{font-family: 'Abel', sans-serif;font-size: 50px;padding:40px 0 30px}
+
+.heading>img{width:50px;animation: spin 10s linear infinite;}
 
 @keyframes spin{100%{transform: rotate(360deg);}}
 
-.container{min-height:80vh}
+.inner{padding:10px 50px}
 
-.inner{width:50%;margin:0 auto;height:80vh;display: flex;flex-direction: column;justify-content: space-evenly;}
+.form-control:focus{box-shadow:none;border-color:rgb(211, 211, 211)}
 
-.form-control {cursor: pointer;}
+.custom-control{margin:10px 0}
 
-.form-control:focus,#generate:focus{box-shadow:none}
+#generate:focus{box-shadow: none;}
+
+.footer{position: absolute;bottom:0;left:50%;transform: translateX(-50%);}
+
+.custom-control-input:checked ~ .custom-control-label::before {background-color: var(--main-color) !important;border-color: var(--main-color);}
+.custom-control-input:focus ~ .custom-control-label::before {box-shadow: none;}
+.custom-control-input ~ .custom-control-label::before {border-color:rgb(211, 211, 211) !important;transform: scale(1.5)}
+.custom-control-input:active ~ .custom-control-label::before {background:#fff !important;}
+
+.custom-select:focus{box-shadow:none;border-color:rgb(211, 211, 211)}
+
+.custom-range::-webkit-slider-runnable-track {background: rgb(255, 230, 230)}
+.custom-range::-webkit-slider-thumb {background: var(--main-color);transform: scale(1.5);}
+.custom-range:active::-webkit-slider-thumb {background: var(--main-color);}
+.custom-range:focus::-webkit-slider-thumb {box-shadow: none;}
+
+textarea{resize: none;background: white !important; }
+
+::-webkit-scrollbar-thumb {background: var(--main-color) !important; }
+::-webkit-scrollbar-thumb:hover {background: rgb(100, 100, 100) !important; }
+
+.input-group-text{cursor: pointer;}
