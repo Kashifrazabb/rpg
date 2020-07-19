@@ -1,5 +1,7 @@
-var LOWER, RESULT, LENGTH, REGEX;
-var QUANTITY=1;
+var LOWER, RESULT, LENGTH, REGEX, QUANTITY;
+
+QUANTITY=1;
+
 var say=document.querySelector('#say');
 var read=document.querySelector('#read');
 var all=document.querySelector('#all');
@@ -63,7 +65,7 @@ quantity.map(i => {
     document.querySelector('#quantity').appendChild(r) 
 })
 
-document.querySelector('#select').value=12
+document.querySelector('#select').value=12;
 
 const Result = () => {
     $('[data-toggle="tooltip"]').tooltip('hide').attr('data-original-title', 'CLICK TO COPY');
