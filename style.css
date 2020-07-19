@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+*{margin:0;padding:0;box-sizing: border-box;user-select: none;}
+
+body{background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(0, 159, 251) 100%);min-height:100vh;display: flex;justify-content: center;align-items: center;}
+
+h1{font-family: 'Quicksand', sans-serif;font-size: 60px;}
+
+h1>img{width:60px;animation: spin 10s linear infinite;}
+
+@keyframes spin{100%{transform: rotate(360deg);}}
+
+.container{min-height:80vh}
+
+.inner{width:50%;margin:0 auto;height:80vh;display: flex;flex-direction: column;justify-content: space-evenly;}
+
+.form-control {cursor: pointer;}
+
+.form-control:focus,#generate:focus{box-shadow:none}

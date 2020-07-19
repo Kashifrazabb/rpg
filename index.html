@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class='text-center'>Secure Passw<img src="./icon.svg" alt='o'>rd Generator</h1><hr>
+        <div class='inner'>
+            <div>
+                <select class="custom-select" id='select' onchange='handleChange()'>
+                    <option selected disabled>Choose Password Length</option>
+                    <optgroup label='Weak' id='weak'></optgroup>
+                    <optgroup label='Strong' id='strong'></optgroup>
+                </select>
+            </div><br>
+            <div class='checkboxes'>
+                <div class="custom-switch custom-control">
+                    <input type="checkbox" class='custom-control-input' id="SYM" checked/>
+                    <label for='SYM' class='custom-control-label'>&nbsp; Include Symbols (e.g. @#$%&_*) </label>
+                </div>
+                <div class="custom-switch custom-control">
+                    <input type="checkbox" id="abc" class='custom-control-input'  checked/>
+                    <label for='abc' class='custom-control-label'>&nbsp; Include Lowercase Characters (e.g. abcdefgh) </label>
+                </div>
+                <div class="custom-switch custom-control">
+                    <input type="checkbox" id="ABC" class='custom-control-input' /> 
+                    <label for='ABC' class='custom-control-label'>&nbsp; Include Uppercase Characters (e.g. ABCDEFGH) </label>
+                </div>
+                <div class="custom-switch custom-control">
+                    <input type="checkbox" id="NUM" class='custom-control-input'  checked/>
+                    <label for='NUM' class='custom-control-label'>&nbsp; Include Numbers (e.g. 1234567) </label>
+                </div>
+            </div><br>
+            <div class='form-group'>
+                <input type="text" class='form-control' data-toggle='tooltip' title='CLICK TO COPY' 
+                    onclick='handleCopy()' onmouseenter='handleHover()' readonly /><br>
+                <button class='btn btn-block btn-dark' onclick="handleGenerate()" id='generate'>Generate</button>
+            </div>
+        </div>
+        <p class='text-center text-dark'>&copy; 2020 - Kashif Raza</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
