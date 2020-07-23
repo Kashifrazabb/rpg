@@ -8,7 +8,7 @@ body{background: #F9FBFD;}
 
 nav .h3 {font-size: 40px;}
 
-.container{background:#fff;border-radius: 20px;margin-top:100px;width:900px;min-height:calc(100vh - 180px );position: relative;}
+.container{background:#fff;border-radius: 20px;margin-top:100px;width:900px;min-height:100vh;position: relative;}
 
 .heading{font-family: 'Abel', sans-serif;font-size: 50px;padding-top:20px}
 
@@ -52,6 +52,16 @@ textarea{resize: none;background: white !important; }
     .container {max-width:95%}
 }
 
+@media (max-width:520px) {
+    .heading{font-size: 30px;}
+    .heading>img{width:30px;}
+}
+
 @media (max-width:502px) {
     .inner{padding-left:10px;padding-right:10px}
+}
+
+@media (max-width:391px) {
+    .custom-control-label{font-size:13px}
+    .custom-control-input ~ .custom-control-label::before {transform: scale(1.3)}
 }
