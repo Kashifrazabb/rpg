@@ -6,9 +6,11 @@
 
 body{background: #F9FBFD;}
 
-.container{background:#fff;border-radius: 20px;margin-top:100px;width:900px;min-height:calc(100vh - 300px );position: relative;}
+nav .h3 {font-size: 40px;}
 
-.heading{font-family: 'Abel', sans-serif;font-size: 50px;padding:40px 0 30px}
+.container{background:#fff;border-radius: 20px;margin-top:100px;width:900px;min-height:calc(100vh - 180px );position: relative;}
+
+.heading{font-family: 'Abel', sans-serif;font-size: 50px;padding-top:20px}
 
 .heading>img{width:50px;animation: spin 10s linear infinite;}
 
@@ -21,8 +23,6 @@ body{background: #F9FBFD;}
 .custom-control{margin:10px 0}
 
 #generate:focus{box-shadow: none;}
-
-.footer{position: absolute;bottom:0;left:50%;transform: translateX(-50%);}
 
 .custom-control-input:checked ~ .custom-control-label::before {background-color: var(--main-color) !important;border-color: var(--main-color);}
 .custom-control-input:focus ~ .custom-control-label::before {box-shadow: none;}
@@ -42,3 +42,16 @@ textarea{resize: none;background: white !important; }
 ::-webkit-scrollbar-thumb:hover {background: rgb(100, 100, 100) !important; }
 
 .input-group-text{cursor: pointer;}
+
+.footer{position: absolute;bottom:0;left:50%;transform: translateX(-50%);}
+
+.custom-control-label {font-size: 15px;}
+@media (max-width:768px) {
+    .heading{font-size: 40px;}
+    .heading>img{width:40px;}
+    .container {max-width:95%}
+}
+
+@media (max-width:502px) {
+    .inner{padding-left:10px;padding-right:10px}
+}

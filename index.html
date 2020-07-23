@@ -13,7 +13,7 @@
     <nav class="navbar fixed-top shadow-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <span class='h3'>Last<span class='text-danger'>Pass...</span></span>
+                <span class='h3'>Any<span class='text-danger'>Pass***</span></span>
             </div>
         </div>
     </nav>
@@ -30,49 +30,49 @@
                             width='20' data-toggle='tooltip' title='CLICK TO COPY' onclick='handleCopy()'></span>
                 </div>
             </div><br>
-            <div class="radios_checks d-flex justify-content-around align-items-center">
-                <div>
+            <div class="row radios_checks d-flex justify-content-around align-items-center">
+                <div class='col-lg-3 col-sm-6'>
                     <label for="select">Password Length</label>
                     <select class="custom-select" id='select' onchange='handleChange()'>
                         <optgroup label='Weak' id='weak'></optgroup>
                         <optgroup label='Strong' id='strong'></optgroup>
                     </select><br><br>
                 </div>
-                <div>
+                <div class='col-lg-3 col-sm-6'>
                     <input type="range" class="custom-range" id="range" min="6" max="100" value="6" step='1'
                         onchange="handleRange()">
                 </div>
-                <div class="radios">
+                <div class="radios col-lg-3 col-md-4 col-sm-5 col-6">
                     <div class="custom-radio custom-control">
                         <input type="radio" class='custom-control-input' id='say' name='rbtn' onchange="handleRCS()" />
-                        <label for='say' class='custom-control-label'> EASY TO SAY </label>
+                        <label for='say' class='custom-control-label'>&nbsp;EASY TO SAY </label>
                     </div>
                     <div class="custom-radio custom-control">
                         <input type="radio" class='custom-control-input' id='read' name='rbtn' onchange="handleRCS()" />
-                        <label for='read' class='custom-control-label'> EASY TO READ </label>
+                        <label for='read' class='custom-control-label'>&nbsp;EASY TO READ </label>
                     </div>
                     <div class="custom-radio custom-control">
                         <input type="radio" class='custom-control-input' id='all' name='rbtn' onchange="handleRCS()"
                             checked />
-                        <label for='all' class='custom-control-label'> ALL CHARACTERS </label>
+                        <label for='all' class='custom-control-label'>&nbsp;ALL CHARACTERS </label>
                     </div>
                 </div>
-                <div class='checkboxes'>
+                <div class='checkboxes col-lg-3 col-md-4 col-sm-5 col-6'>
                     <div class="custom-checkbox custom-control">
                         <input type="checkbox" id="ABC" class='custom-control-input' checked />
-                        <label for='ABC' class='custom-control-label'>&nbsp; UPPER </label>
+                        <label for='ABC' class='custom-control-label'>&nbsp;UPPER </label>
                     </div>
                     <div class="custom-checkbox custom-control">
                         <input type="checkbox" id="abc" class='custom-control-input' checked />
-                        <label for='abc' class='custom-control-label'>&nbsp; LOWER </label>
+                        <label for='abc' class='custom-control-label'>&nbsp;LOWER </label>
                     </div>
                     <div class="custom-checkbox custom-control">
                         <input type="checkbox" class='custom-control-input' id="SYM" checked />
-                        <label for='SYM' class='custom-control-label'>&nbsp; SYMBOLS </label>
+                        <label for='SYM' class='custom-control-label'>&nbsp;SYMBOLS </label>
                     </div>
                     <div class="custom-checkbox custom-control">
                         <input type="checkbox" id="NUM" class='custom-control-input' checked />
-                        <label for='NUM' class='custom-control-label'>&nbsp; NUMBERS </label>
+                        <label for='NUM' class='custom-control-label'>&nbsp;NUMBERS </label>
                     </div>
                 </div>
             </div><br>
